@@ -1,0 +1,2761 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prerna Canteen Website Developer | Hemant Raj</title>
+  <meta name="description" content="Prerna Canteen website designed and developed by Hemant Raj, Frontend Developer and Web Designer. Explore the Prerna Canteen digital experience in Puranpur, Pilibhit.">
+  <meta name="author" content="Hemant Raj">
+  <meta name="creator" content="Hemant Raj">
+  <meta name="publisher" content="Prerna Canteen">
+  <meta name="theme-color" content="#123c2d">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://prernacanteen.shop/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prernacanteen.shop/">
+  <meta property="og:title" content="Prerna Canteen Website Developer | Hemant Raj">
+  <meta property="og:description" content="Discover Prerna Canteen, a digital experience designed and developed by Hemant Raj.">
+  <meta property="og:site_name" content="Prerna Canteen">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prerna Canteen Website Developer | Hemant Raj">
+  <meta name="twitter:description" content="Prerna Canteen website designed and developed by Hemant Raj.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://prernacanteen.shop/#website",
+        "url": "https://prernacanteen.shop/",
+        "name": "Prerna Canteen",
+        "alternateName": "Prerna Canteen Website",
+        "description": "Prerna Canteen, Puranpur, Pilibhit. Website designed and developed by Hemant Raj.",
+        "creator": {"@id": "https://prernacanteen.shop/#developer"},
+        "inLanguage": "hi"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://prernacanteen.shop/#webpage",
+        "url": "https://prernacanteen.shop/",
+        "name": "Prerna Canteen Website Developer | Hemant Raj",
+        "isPartOf": {"@id": "https://prernacanteen.shop/#website"},
+        "about": {"@id": "https://prernacanteen.shop/#developer"},
+        "inLanguage": "hi"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://prernacanteen.shop/#developer",
+        "name": "Hemant Raj",
+        "url": "https://prernacanteen.shop/",
+        "jobTitle": "Frontend Developer and Web Designer",
+        "description": "Developer of the Prerna Canteen website and digital experience.",
+        "sameAs": [
+          "https://www.linkedin.com/in/hemant-raj-2a2639326/",
+          "https://github.com/HEMANT-RAJ-RAWAT",
+          "https://instagram.com/hemantraj.0",
+          "https://x.com/hemantr42078975"
+        ],
+        "knowsAbout": ["HTML", "CSS", "Frontend Development", "Web Design"]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/jpeg" href="images/nrlm_logo.jpg.jpeg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root{
+      --orange:#f97316;
+      --orange2:#fb923c;
+      --cream:#fffaf4;
+      --green:#123c2d;
+      --dark:#10231d;
+      --muted:#64736d;
+      --line:rgba(16,35,29,.09);
+    }
+
+    *{scroll-behavior:smooth}
+    body{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      background:#fff;
+      color:var(--dark);
+      overflow-x:hidden;
+    }
+
+    .marcellus{font-family:'Marcellus',serif}
+    .glass{
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.65);
+    }
+
+    .hero{
+      min-height:88vh;
+      position:relative;
+      background:
+        linear-gradient(90deg,rgba(9,29,22,.88) 0%,rgba(9,29,22,.58) 48%,rgba(9,29,22,.18) 100%),
+        url('images/canteen_front.jpg') center/cover;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:180px;
+      background:linear-gradient(transparent,#fff);
+      pointer-events:none;
+    }
+
+    .grid-bg{
+      background-image:
+        linear-gradient(rgba(18,60,45,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(18,60,45,.045) 1px,transparent 1px);
+      background-size:34px 34px;
+    }
+
+    .orange-glow{
+      box-shadow:0 18px 50px rgba(249,115,22,.22);
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:28px;
+      box-shadow:0 12px 45px rgba(16,35,29,.06);
+      transition:.35s ease;
+    }
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 25px 65px rgba(16,35,29,.12);
+    }
+
+    .food-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+      transition:.3s ease;
+    }
+    .food-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 50px rgba(16,35,29,.1);
+    }
+
+    .food-icon{
+      width:58px;height:58px;
+      display:grid;place-items:center;
+      border-radius:18px;
+      background:#fff3e9;
+      color:#ea580c;
+      font-size:23px;
+    }
+
+    .btn-main{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#f97316,#ea580c);
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 12px 30px rgba(249,115,22,.25);
+      transition:.25s ease;
+    }
+    .btn-main:hover{transform:translateY(-2px);box-shadow:0 16px 35px rgba(249,115,22,.32)}
+
+    .btn-soft{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:13px 20px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--green);
+      font-weight:800;
+      transition:.25s ease;
+    }
+    .btn-soft:hover{background:#fff7f0;transform:translateY(-2px)}
+
+    .section-label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#ea580c;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+    .section-label:before{
+      content:"";
+      width:28px;height:2px;
+      background:#f97316;
+      border-radius:99px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+    .reveal.show{opacity:1;transform:none}
+
+    .floating{
+      animation:float 4s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-9px)}
+    }
+
+    .pulse-dot{
+      width:9px;height:9px;border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 0 6px rgba(34,197,94,.13);
+    }
+
+    .cart-badge{
+      position:absolute;
+      right:-5px;
+      top:-7px;
+      min-width:21px;height:21px;
+      display:grid;place-items:center;
+      padding:0 5px;
+      border-radius:99px;
+      background:#ef4444;
+      color:#fff;
+      font-size:10px;
+      font-weight:800;
+      border:2px solid #fff;
+    }
+
+    .drawer{
+      position:fixed;
+      top:0;right:-460px;
+      width:min(430px,100%);
+      height:100vh;
+      background:#fff;
+      z-index:100;
+      transition:right .35s ease;
+      box-shadow:-20px 0 60px rgba(0,0,0,.18);
+      display:flex;
+      flex-direction:column;
+    }
+    .drawer.open{right:0}
+    .overlay{
+      position:fixed;inset:0;
+      background:rgba(7,18,14,.55);
+      backdrop-filter:blur(4px);
+      z-index:90;
+      opacity:0;pointer-events:none;
+      transition:.3s;
+    }
+    .overlay.open{opacity:1;pointer-events:auto}
+
+    .modal{
+      position:fixed;inset:0;
+      background:rgba(7,18,14,.62);
+      backdrop-filter:blur(7px);
+      z-index:120;
+      opacity:0;pointer-events:none;
+      transition:.25s;
+      display:grid;place-items:center;
+      padding:20px;
+    }
+    .modal.open{opacity:1;pointer-events:auto}
+
+    .input{
+      width:100%;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      padding:13px 15px;
+      outline:none;
+      transition:.2s;
+      background:#fafafa;
+    }
+    .input:focus{
+      border-color:#fb923c;
+      box-shadow:0 0 0 4px rgba(249,115,22,.1);
+      background:#fff;
+    }
+
+    .mobile-nav{
+      display:none;
+    }
+
+    @media(max-width:768px){
+      .hero{min-height:92vh}
+      .desktop-nav{display:none}
+      .mobile-nav{display:flex}
+      .hero-title{font-size:42px;line-height:1.08}
+    }
+
+    @media(min-width:769px){
+      .hero-title{font-size:72px;line-height:1.03}
+    }
+
+    .category.active{
+      background:#123c2d;
+      color:#fff;
+      border-color:#123c2d;
+    }
+
+    .number{
+      font-variant-numeric:tabular-nums;
+    }
+
+    .image-cover{
+      width:100%;height:100%;
+      object-fit:cover;
+    }
+
+    /* OFFICIALS: compact cards + large full-width photos */
+    #officers .card > div:first-child{
+      width:100% !important;
+      height:auto !important;
+      min-height:0 !important;
+      display:block !important;
+      overflow:hidden !important;
+      background:#f3f4f6;
+    }
+
+    #officers .card > div:first-child img{
+      width:100% !important;
+      height:auto !important;
+      min-height:0 !important;
+      display:block !important;
+      object-fit:contain !important;
+      object-position:center center !important;
+    }
+
+    #officers .card > div:last-child{
+      padding:12px 10px !important;
+    }
+
+    #officers .card h3{
+      margin:0 !important;
+      line-height:1.35 !important;
+      font-size:1.05rem !important;
+    }
+
+    @media(max-width:640px){
+      #officers .card > div:first-child{height:auto !important;}
+      #officers .card > div:first-child img{height:auto !important;}
+    }
+
+    /* OPENING CEREMONY */
+    .opening-wrap{
+      position:relative;
+      border-radius:32px;
+      overflow:hidden;
+      background:#10231d;
+      box-shadow:0 25px 80px rgba(16,35,29,.16);
+    }
+    .opening-slide{
+      display:none;
+      position:relative;
+      min-height:520px;
+    }
+    .opening-slide.active{
+      display:block;
+      animation:openingFade .7s ease;
+    }
+    .opening-slide img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+    }
+    .opening-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(7,18,14,.82),rgba(7,18,14,.22) 65%,rgba(7,18,14,.08));
+    }
+    .opening-caption{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:min(700px,100%);
+      padding:42px;
+      color:#fff;
+    }
+    .opening-caption .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(249,115,22,.18);
+      border:1px solid rgba(249,115,22,.35);
+      color:#fed7aa;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .opening-caption h3{
+      font-family:'Marcellus',serif;
+      font-size:clamp(30px,5vw,52px);
+      line-height:1.05;
+      margin:14px 0 10px;
+    }
+    .opening-caption p{
+      color:rgba(255,255,255,.78);
+      line-height:1.7;
+      max-width:620px;
+    }
+    .opening-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:5;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.9);
+      color:#123c2d;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition:.25s;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+    .opening-arrow:hover{transform:translateY(-50%) scale(1.08);background:#fff}
+    .opening-prev{left:20px}
+    .opening-next{right:20px}
+    .opening-dots{
+      position:absolute;
+      left:42px;
+      bottom:24px;
+      display:flex;
+      gap:7px;
+      z-index:6;
+    }
+    .opening-dot{
+      width:9px;
+      height:9px;
+      border:0;
+      border-radius:99px;
+      background:rgba(255,255,255,.45);
+      cursor:pointer;
+      transition:.3s;
+      padding:0;
+    }
+    .opening-dot.active{
+      width:28px;
+      background:#f97316;
+    }
+    .opening-meta{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .opening-meta-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 10px 35px rgba(16,35,29,.05);
+    }
+    .opening-meta-card i{
+      color:#f97316;
+      font-size:18px;
+      margin-bottom:10px;
+    }
+    .opening-meta-card strong{
+      display:block;
+      font-size:14px;
+      color:#123c2d;
+    }
+    .opening-meta-card span{
+      display:block;
+      color:#64736d;
+      font-size:12px;
+      margin-top:5px;
+      line-height:1.5;
+    }
+    @keyframes openingFade{
+      from{opacity:0;transform:scale(1.015)}
+      to{opacity:1;transform:scale(1)}
+    }
+    @media(max-width:768px){
+      .opening-slide,.opening-slide img{min-height:500px;height:500px}
+      .opening-caption{padding:28px 22px 58px}
+      .opening-caption h3{font-size:34px}
+      .opening-prev{left:12px}
+      .opening-next{right:12px}
+      .opening-arrow{width:44px;height:44px}
+      .opening-dots{left:22px;bottom:22px}
+      .opening-meta{grid-template-columns:1fr}
+    }
+
+  
+/* Dignitary photo circles */
+.opening-people-meta{grid-template-columns:repeat(3,minmax(0,1fr));}
+.opening-person-card{display:flex;align-items:center;gap:14px;text-align:left;}
+.opening-person-photo{width:76px;height:76px;min-width:76px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid #f97316;box-shadow:0 8px 22px rgba(18,60,45,.14);background:#fff7ed;}
+.opening-person-card strong{display:block;color:#f97316;font-size:.72rem;margin-bottom:3px;}
+.opening-person-card span{display:block;color:#123c2d;font-weight:800;font-size:.94rem;}
+.opening-person-card small{display:block;color:#6b7280;font-size:.68rem;line-height:1.35;margin-top:4px;}
+@media(max-width:900px){.opening-people-meta{grid-template-columns:1fr;}}
+@media(max-width:640px){.opening-person-photo{width:62px;height:62px;min-width:62px;}.opening-person-card span{font-size:.84rem;}}
+
+    /* =========================
+       ADVANCED REAL-WEBSITE UI
+       ========================= */
+    html{scroll-padding-top:90px}
+    body{min-width:320px}
+    ::selection{background:#f97316;color:#fff}
+    :focus-visible{outline:3px solid rgba(249,115,22,.45);outline-offset:3px}
+    .top-progress{
+      position:fixed;left:0;top:0;width:0;height:3px;z-index:9999;
+      background:linear-gradient(90deg,#f97316,#fb923c,#facc15);
+      box-shadow:0 0 12px rgba(249,115,22,.45);
+    }
+    .site-topbar{
+      background:#091d16;color:#fff;font-size:12px;
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .status-live{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:7px 12px;border-radius:999px;
+      background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.22)
+    }
+    .status-live .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.10)}
+    .nav-shadow{box-shadow:0 8px 30px rgba(9,29,22,.06)}
+    .mobile-menu{
+      max-height:0;overflow:hidden;opacity:0;
+      transition:max-height .35s ease,opacity .25s ease
+    }
+    .mobile-menu.open{max-height:600px;opacity:1}
+    .hero:before{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(circle at 75% 35%,rgba(249,115,22,.22),transparent 28%);
+    }
+    .hero-content-card{
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(12px);border-radius:28px;padding:12px 14px;
+    }
+    .stat-card{transition:.3s ease}
+    .stat-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.14)!important}
+    .section-kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      color:#ea580c;font-size:11px;font-weight:900;letter-spacing:.16em;
+      text-transform:uppercase
+    }
+    .section-kicker:before{content:"";width:28px;height:2px;background:#f97316;border-radius:99px}
+    .food-card .add-btn{opacity:.96}
+    .food-card:hover .add-btn{transform:translateY(-1px)}
+    .image-cover{width:100%;height:100%;object-fit:cover}
+    .floating-actions{
+      position:fixed;right:18px;bottom:18px;z-index:70;
+      display:flex;flex-direction:column;gap:10px
+    }
+    .float-btn{
+      width:48px;height:48px;border-radius:16px;display:grid;place-items:center;
+      box-shadow:0 12px 35px rgba(0,0,0,.16);transition:.25s ease
+    }
+    .float-btn:hover{transform:translateY(-3px) scale(1.03)}
+    .back-top{opacity:0;pointer-events:none;transform:translateY(10px)}
+    .back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .toast{
+      position:fixed;left:50%;bottom:24px;z-index:1000;
+      transform:translate(-50%,20px);opacity:0;pointer-events:none;
+      background:#10231d;color:#fff;padding:12px 18px;border-radius:14px;
+      box-shadow:0 15px 40px rgba(0,0,0,.22);font-size:13px;font-weight:700;
+      transition:.3s ease
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .sticky-cart{
+      position:fixed;left:50%;bottom:18px;z-index:65;
+      transform:translate(-50%,120px);opacity:0;pointer-events:none;
+      width:min(92vw,560px);background:rgba(255,255,255,.94);
+      backdrop-filter:blur(16px);border:1px solid rgba(18,60,45,.10);
+      border-radius:20px;padding:10px;box-shadow:0 18px 50px rgba(16,35,29,.18);
+      transition:.3s ease
+    }
+    .sticky-cart.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+    .search-box{
+      border:1px solid var(--line);background:#fff;border-radius:16px;
+      padding:12px 15px;outline:none;width:100%;transition:.2s
+    }
+    .search-box:focus{border-color:#fb923c;box-shadow:0 0 0 4px rgba(249,115,22,.10)}
+    .empty-state{grid-column:1/-1;text-align:center;padding:55px 20px;border:1px dashed rgba(18,60,45,.15);border-radius:24px;background:#fff}
+    @media(max-width:767px){
+      .hero{min-height:82vh}
+      .hero-title{font-size:clamp(2.7rem,12vw,4rem)!important;line-height:1.02}
+      .floating-actions{right:12px;bottom:78px}
+      .sticky-cart{bottom:12px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+    }
+
+  
+/* ===== COLORFUL PROFESSIONAL THEME ===== */
+:root{
+  --prerna-green:#123c2d;
+  --prerna-orange:#f97316;
+  --prerna-yellow:#f5c542;
+  --prerna-cream:#fff7ed;
+  --prerna-pink:#fff1f2;
+  --prerna-blue:#eff6ff;
+  --prerna-green-soft:#ecfdf5;
+}
+body{
+  background:
+    radial-gradient(circle at 5% 8%,rgba(249,115,22,.055),transparent 22%),
+    radial-gradient(circle at 95% 42%,rgba(245,197,66,.07),transparent 24%),
+    #fff;
+}
+.card{
+  box-shadow:0 15px 45px rgba(18,60,45,.08);
+  border:1px solid rgba(18,60,45,.08);
+}
+.food-card{
+  background:linear-gradient(145deg,#ffffff 0%,#fffaf5 100%) !important;
+  border:1px solid rgba(249,115,22,.12);
+  box-shadow:0 12px 35px rgba(18,60,45,.07);
+}
+.food-card:nth-child(3n+1) .food-icon{
+  background:#fff1e7 !important;color:#ea580c !important;
+}
+.food-card:nth-child(3n+2) .food-icon{
+  background:#ecfdf5 !important;color:#15803d !important;
+}
+.food-card:nth-child(3n) .food-icon{
+  background:#eff6ff !important;color:#2563eb !important;
+}
+.section-label,.section-kicker{color:#ea580c !important}
+.btn-main{
+  background:linear-gradient(135deg,#f97316,#ea580c) !important;
+  box-shadow:0 10px 25px rgba(249,115,22,.20);
+}
+.btn-main:hover{
+  background:linear-gradient(135deg,#ea580c,#c2410c) !important;
+}
+.category.active{
+  background:linear-gradient(135deg,#123c2d,#1f5d45) !important;
+  color:#fff !important;
+  box-shadow:0 8px 20px rgba(18,60,45,.18);
+}
+.hero{
+  background:
+    linear-gradient(110deg,rgba(7,34,24,.96),rgba(18,60,45,.84) 55%,rgba(234,88,12,.48)),
+    var(--hero-bg);
+}
+.stat-card:nth-child(1){background:rgba(249,115,22,.18)!important}
+.stat-card:nth-child(2){background:rgba(34,197,94,.15)!important}
+.stat-card:nth-child(3){background:rgba(245,197,66,.18)!important}
+.trust-strip{
+  background:linear-gradient(90deg,#fff7ed,#ffffff,#ecfdf5)!important;
+}
+
+
+/* ===== PRERNA COLORFUL UI REFRESH ===== */
+body{
+  background:#fffaf5 !important;
+}
+section{
+  position:relative;
+}
+section:nth-of-type(even){
+  background:linear-gradient(135deg,#fff7ed 0%,#ffffff 48%,#f0fdf4 100%);
+}
+section:nth-of-type(odd){
+  background:linear-gradient(135deg,#ffffff 0%,#fffaf5 55%,#eff6ff 100%);
+}
+
+/* colourful section heading */
+.section-title{
+  position:relative;
+  display:inline-block;
+}
+.section-title:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-9px;
+  width:58%;
+  height:4px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#f97316,#facc15,#22c55e);
+}
+
+/* colourful feature cards */
+.feature-card,.impact-card,.team-card,.official-card{
+  border:1px solid rgba(18,60,45,.08) !important;
+  box-shadow:0 12px 35px rgba(18,60,45,.07) !important;
+  transition:transform .3s ease,box-shadow .3s ease !important;
+}
+.feature-card:hover,.impact-card:hover,.team-card:hover,.official-card:hover{
+  transform:translateY(-7px) !important;
+  box-shadow:0 20px 45px rgba(18,60,45,.13) !important;
+}
+
+/* alternating colorful top borders */
+.feature-card:nth-child(4n+1){border-top:4px solid #f97316 !important}
+.feature-card:nth-child(4n+2){border-top:4px solid #22c55e !important}
+.feature-card:nth-child(4n+3){border-top:4px solid #3b82f6 !important}
+.feature-card:nth-child(4n){border-top:4px solid #eab308 !important}
+
+/* food cards */
+.food-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px !important;
+}
+.food-card:before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,#f97316,#facc15,#22c55e,#3b82f6);
+}
+.food-card:hover{
+  transform:translateY(-8px) scale(1.01) !important;
+  box-shadow:0 22px 50px rgba(18,60,45,.14) !important;
+}
+
+/* colorful buttons */
+.btn-main{
+  border-radius:14px !important;
+  background:linear-gradient(135deg,#f97316,#ea580c) !important;
+}
+.btn-main:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(249,115,22,.28) !important;
+}
+
+/* colorful category pills */
+.category{
+  border:1px solid rgba(18,60,45,.08) !important;
+  background:#fff !important;
+  transition:.25s ease !important;
+}
+.category:hover{
+  transform:translateY(-2px);
+  border-color:#f97316 !important;
+  background:#fff7ed !important;
+}
+.category.active{
+  background:linear-gradient(135deg,#f97316,#ea580c) !important;
+  color:#fff !important;
+}
+
+/* colourful hero */
+.hero{
+  min-height:88vh;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(249,115,22,.42),transparent 23%),
+    radial-gradient(circle at 87% 25%,rgba(34,197,94,.30),transparent 22%),
+    radial-gradient(circle at 78% 82%,rgba(59,130,246,.25),transparent 25%),
+    linear-gradient(120deg,#08251b 0%,#123c2d 48%,#7c2d12 100%) !important;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:320px;height:320px;
+  right:-100px;bottom:-130px;
+  border-radius:50%;
+  background:rgba(250,204,21,.14);
+  filter:blur(4px);
+}
+
+/* stats */
+.stat-card{
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(10px);
+  border-radius:20px !important;
+}
+.stat-card:nth-child(1){background:linear-gradient(135deg,rgba(249,115,22,.25),rgba(249,115,22,.08)) !important}
+.stat-card:nth-child(2){background:linear-gradient(135deg,rgba(34,197,94,.25),rgba(34,197,94,.08)) !important}
+.stat-card:nth-child(3){background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(59,130,246,.08)) !important}
+
+/* opening ceremony */
+.opening-slide{
+  border-radius:28px !important;
+  overflow:hidden;
+}
+.opening-dot.active{
+  background:#f97316 !important;
+  transform:scale(1.3);
+}
+
+/* form */
+input,textarea,select{
+  border-radius:14px !important;
+}
+input:focus,textarea:focus,select:focus{
+  border-color:#f97316 !important;
+  box-shadow:0 0 0 4px rgba(249,115,22,.10) !important;
+}
+
+/* colorful footer */
+footer{
+  background:
+    radial-gradient(circle at 10% 20%,rgba(249,115,22,.18),transparent 22%),
+    radial-gradient(circle at 90% 70%,rgba(34,197,94,.15),transparent 25%),
+    #092219 !important;
+}
+
+/* floating back button */
+.float-btn{
+  border:2px solid rgba(255,255,255,.7);
+}
+
+/* mobile polish */
+@media(max-width:767px){
+  .hero{
+    min-height:82vh;
+  }
+  section{
+    overflow:hidden;
+  }
+  .food-card:hover{
+    transform:translateY(-4px) !important;
+  }
+}
+
+
+/* ===== TEXT VISIBILITY SAFETY =====
+   Keeps the existing colorful design. These rules only prevent
+   white text from becoming invisible on light sections. */
+body{color:#10231d;}
+#opening,#vision,#menu,#team,#officers,#reviews{
+  color:#10231d;
+}
+#opening h1,#opening h2,#opening h3,
+#vision h1,#vision h2,#vision h3,
+#menu h1,#menu h2,#menu h3,
+#team h1,#team h2,#team h3,
+#officers h1,#officers h2,#officers h3,
+#reviews h1,#reviews h2,#reviews h3{
+  color:#123c2d;
+}
+#opening p,#vision p,#menu p,#team p,#officers p,#reviews p{
+  color:#475569;
+}
+#impact,#contact{
+  background:#123c2d !important;
+  color:#fff;
+}
+#impact h1,#impact h2,#impact h3,
+#contact h1,#contact h2,#contact h3{
+  color:#fff;
+}
+#impact p,#contact p{
+  color:rgba(255,255,255,.78);
+}
+
+
+    /* ===== ADVANCED MENU INTRO POLISH ===== */
+    .menu-intro-copy{margin-top:14px;display:grid;gap:9px}
+    .menu-tagline{
+      display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+      width:fit-content;max-width:100%;padding:10px 15px;
+      border:1px solid rgba(249,115,22,.18);border-radius:999px;
+      background:linear-gradient(110deg,#fff1e7 0%,#fffaf2 52%,#ecfdf5 100%);
+      color:#123c2d;font-size:14px;font-weight:800;
+      box-shadow:0 8px 22px rgba(18,60,45,.06)
+    }
+    .menu-tagline-icon{
+      display:grid;place-items:center;width:29px;height:29px;flex:0 0 29px;
+      border-radius:50%;background:#123c2d;color:#bbf7d0;font-size:13px
+    }
+    .menu-tagline b{color:#f97316;padding:0 3px}
+    .menu-subline{margin:0;color:#64736d;font-size:13px;line-height:1.8}
+    #menu .search-box{
+      min-height:54px;border-radius:18px!important;padding-right:18px;
+      box-shadow:0 8px 24px rgba(18,60,45,.045)
+    }
+    #menu .category{padding:11px 17px;box-shadow:0 5px 16px rgba(18,60,45,.035)}
+    #menu .category.active{box-shadow:0 8px 22px rgba(249,115,22,.2)}
+    @media(max-width:640px){
+      .menu-tagline{font-size:12px;padding:9px 12px;gap:8px}
+      .menu-subline{font-size:12px}
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="site-topbar">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+    <div class="flex items-center gap-3">
+      <span id="canteenStatus" class="status-live"><span class="dot"></span><span>स्थिति जाँची जा रही है...</span></span>
+      <span class="hidden sm:inline text-white/55">ताज़ा भोजन • स्वच्छ रसोई • उचित मूल्य</span>
+    </div>
+    <div class="text-white/70">संपर्क: 8192078572</div>
+  </div>
+</div>
+
+
+<!-- TOP BAR -->
+<div class="bg-[#123c2d] text-white text-xs">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="pulse-dot"></span>
+      <span>ताज़ा सूचना: कैंटीन आज खुली है • ताज़ा भोजन • स्वच्छ रसोई</span>
+    </div>
+    <div class="hidden sm:flex items-center gap-5 opacity-90">
+      <span><i class="fa-solid fa-clock mr-1"></i> सोमवार–शनिवार · 09:00–17:00</span>
+      <span><i class="fa-solid fa-phone mr-1"></i> 8192078572</span>
+    </div>
+  </div>
+</div>
+
+<div id="topProgress" class="top-progress"></div>
+
+<!-- PRESERVED UI: NAV LOGO + FLOATING WHATSAPP + CART + BACK-TO-TOP + MOBILE NAV -->
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 glass shadow-sm">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-[#fff1e7] grid place-items-center overflow-hidden">
+          <img src="images/nrlm_logo.jpg.jpeg" alt="NRLM" class="w-10 h-10 object-contain"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-hands-holding-child text-orange-600 text-xl\'></i>';">
+        </div>
+        <div>
+          <div class="font-extrabold text-[#123c2d] leading-none">PRERNA</div>
+          <div class="text-[10px] tracking-[.22em] text-gray-500 mt-1">मॉडल कैंटीन</div>
+        </div>
+      </a>
+
+      <nav class="desktop-nav hidden lg:flex items-center gap-7 text-sm font-bold text-gray-600">
+        <a href="#home" class="hover:text-orange-600 transition">मुख्य पृष्ठ</a>
+        <a href="#opening" class="text-sm font-semibold text-gray-600 hover:text-orange-600">उद्घाटन</a>
+        <a href="#vision" class="hover:text-orange-600 transition">हमारा उद्देश्य</a>
+        <a href="#impact" class="hover:text-orange-600 transition">प्रभाव</a>
+        <a href="#menu" class="hover:text-orange-600 transition">भोजन सूची</a>
+        <a href="#team" class="hover:text-orange-600 transition">हमारी टीम</a>
+        <a href="#reviews" class="hover:text-orange-600 transition">प्रतिक्रिया</a>
+        <a href="#officers" class="hover:text-orange-600 transition">अधिकारीगण</a>
+        <a href="#contact" class="hover:text-orange-600 transition">संपर्क करें</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="mobileMenuBtn" aria-label="मोबाइल मेनू खोलें" aria-expanded="false"
+                class="lg:hidden w-11 h-11 rounded-2xl bg-orange-50 text-orange-700 grid place-items-center">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <button onclick="openटोकरी()" class="relative w-11 h-11 rounded-14px bg-[#123c2d] text-white rounded-2xl grid place-items-center hover:scale-105 transition">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartBadge" class="cart-badge">0</span>
+        </button>
+        <a href="https://wa.me/918192078572" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex btn-main py-3 px-4">
+          <i class="fa-brands fa-whatsapp"></i> ऑर्डर करें
+        </a>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu border-t border-slate-200">
+      <nav class="py-3 grid gap-1 text-sm font-bold text-gray-700">
+        <a href="#home" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">मुख्य पृष्ठ</a>
+        <a href="#opening" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">उद्घाटन</a>
+        <a href="#vision" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">हमारा उद्देश्य</a>
+        <a href="#impact" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">प्रभाव</a>
+        <a href="#menu" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">भोजन सूची</a>
+        <a href="#team" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">हमारी टीम</a>
+        <a href="#reviews" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">प्रतिक्रिया</a>
+        <a href="#officers" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">अधिकारीगण</a>
+        <a href="#contact" class="mobile-link px-4 py-3 rounded-xl hover:bg-orange-50">संपर्क करें</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero flex items-center">
+  <div class="max-w-7xl mx-auto px-5 w-full relative z-10">
+    <div class="max-w-3xl text-white py-20">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-7">
+        <span class="pulse-dot"></span>
+        <span class="text-sm font-bold">महिला समूह द्वारा संचालित • आरसेटी प्रशिक्षित • समुदाय द्वारा समर्थित</span>
+      </div>
+
+      <h1 class="hero-title marcellus mb-6">
+        नारी शक्ति मॉडल<br>
+        <span class="text-orange-400">प्रेरणा कैंटीन</span>
+      </h1>
+
+      <p class="text-white/80 text-base sm:text-lg leading-8 max-w-2xl mb-8">
+        पूरनपुर, पीलीभीत में महिला स्वयं सहायता समूह द्वारा संचालित स्वच्छ और विश्वसनीय कैंटीन — जहाँ स्वादिष्ट भोजन के साथ महिलाओं की आर्थिक आत्मनिर्भरता को भी बढ़ावा मिलता है।
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#menu" class="btn-main">
+          भोजन सूची देखें <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://wa.me/918192078572" target="_blank" rel="noopener noreferrer" class="btn-soft !bg-white/10 !text-white !border-white/20">
+          <i class="fa-brands fa-whatsapp text-green-400"></i> व्हाट्सऐप ऑर्डर करें
+        </a>
+      </div>
+
+      <div class="grid grid-cols-3 max-w-xl gap-3 mt-12">
+        <div class="glass rounded-2xl p-4 !bg-white/10 !border-white/15">
+          <div class="text-2xl font-extrabold number">6+</div>
+          <div class="text-xs text-white/65 mt-1">स्वयं सहायता समूह की महिलाएँ</div>
+        </div>
+        <div class="glass rounded-2xl p-4 !bg-white/10 !border-white/15">
+          <div class="text-2xl font-extrabold">100%</div>
+          <div class="text-xs text-white/65 mt-1">महिलाओं द्वारा संचालित</div>
+        </div>
+        <div class="glass rounded-2xl p-4 !bg-white/10 !border-white/15">
+          <div class="text-2xl font-extrabold">ताज़ा भोजन</div>
+          <div class="text-xs text-white/65 mt-1">दैनिक भोजन</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="relative -mt-10 z-20 px-5">
+  <div class="max-w-6xl mx-auto card px-5 sm:px-8 py-5">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-shield-heart"></i></div>
+        <div><b class="text-sm">विश्वसनीय</b><p class="text-xs text-gray-500">सामुदायिक कैंटीन</p></div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-green-50 text-green-700 grid place-items-center"><i class="fa-solid fa-leaf"></i></div>
+        <div><b class="text-sm">पर्यावरण के अनुकूल</b><p class="text-xs text-gray-500">कम प्लास्टिक उपयोग</p></div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 grid place-items-center"><i class="fa-solid fa-qrcode"></i></div>
+        <div><b class="text-sm">डिजिटल भुगतान</b><p class="text-xs text-gray-500">यूपीआई / क्यूआर तैयार</p></div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-700 grid place-items-center"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div><b class="text-sm">आरसेटी प्रशिक्षित</b><p class="text-xs text-gray-500">प्रशिक्षित टीम</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ========== PRERNA CANTEEN OPENING CEREMONY ========== -->
+
+<style>
+  #opening {
+    background: #fffaf4;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  #opening .opening-section-label {
+    display: inline-block;
+    color: #e87519;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+
+  /* Slider */
+  #opening .opening-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #10251e;
+    box-shadow: 0 16px 45px rgba(18,60,45,.18);
+  }
+
+  #opening .opening-slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: clamp(430px, 48vw, 560px);
+    overflow: hidden;
+    background: #10251e;
+  }
+
+  #opening .opening-slide.active {
+    display: block;
+  }
+
+  /* Complete photo, without cropping */
+  #opening .opening-slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #10251e;
+  }
+
+  /* Dark gradient behind caption */
+  #opening .opening-overlay {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,.82) 0%,
+      rgba(0,0,0,.62) 22%,
+      rgba(0,0,0,.30) 38%,
+      rgba(0,0,0,.06) 58%,
+      transparent 100%
+    );
+  }
+
+  /* Text area */
+  #opening .opening-caption {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 42px 65px 48px;
+    text-align: center;
+    color: #fff !important;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,.18),
+      transparent
+    );
+  }
+
+  /* Orange badge */
+  #opening .opening-caption .eyebrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    padding: 6px 13px;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 30px;
+    background: #e87519;
+    color: #fff !important;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(0,0,0,.25);
+  }
+
+  /* Main heading: force white */
+  #opening .opening-caption h3 {
+    max-width: 950px;
+    margin: 0 auto;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    font-size: clamp(20px, 2.5vw, 31px);
+    font-weight: 900;
+    line-height: 1.25;
+    text-shadow: 0 2px 5px #000, 0 4px 14px #000;
+    overflow-wrap: break-word;
+  }
+
+  #opening .opening-caption p {
+    max-width: 750px;
+    margin: 7px auto 0;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    font-size: clamp(12px, 1.2vw, 14px);
+    font-weight: 600;
+    line-height: 1.5;
+    text-shadow: 0 2px 6px #000;
+  }
+
+  /* Navigation arrows */
+  #opening .opening-arrow {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+    background: rgba(18,60,45,.95);
+    color: #fff;
+    cursor: pointer;
+    transition: background .25s, transform .25s;
+  }
+
+  #opening .opening-arrow:hover {
+    background: #e87519;
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  #opening .opening-prev { left: 16px; }
+  #opening .opening-next { right: 16px; }
+
+  /* Slide dots */
+  #opening .opening-dots {
+    position: absolute;
+    z-index: 6;
+    bottom: 17px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #opening .opening-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.75);
+    cursor: pointer;
+  }
+
+  #opening .opening-dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: #ffad52;
+  }
+
+  /* Guest information cards */
+  #opening .opening-people-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 28px;
+  }
+
+  #opening .opening-person-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #eadfce;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(18,60,45,.08);
+  }
+
+  #opening .opening-person-photo {
+    flex: 0 0 100px;
+    width: 100px;
+    height: 110px;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #opening .opening-person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+  }
+
+  #opening .opening-person-info strong {
+    color: #c45c17;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  #opening .opening-person-info span {
+    color: #123c2d;
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  #opening .opening-person-info small {
+    color: #5c625e;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    #opening .opening-slide {
+      height: 430px;
+    }
+
+    #opening .opening-caption {
+      padding: 38px 42px 45px;
+    }
+
+    #opening .opening-person-card {
+      gap: 12px;
+      padding: 14px;
+    }
+
+    #opening .opening-person-photo {
+      flex-basis: 80px;
+      width: 80px;
+      height: 95px;
+    }
+
+    #opening .opening-person-info span {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #opening {
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
+
+    #opening .opening-wrap {
+      border-radius: 14px;
+    }
+
+    #opening .opening-slide {
+      height: 400px;
+    }
+
+    #opening .opening-caption {
+      padding: 34px 18px 42px;
+    }
+
+    #opening .opening-caption .eyebrow {
+      margin-bottom: 9px;
+      padding: 7px 12px;
+      font-size: 11px;
+    }
+
+    #opening .opening-caption h3 {
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    #opening .opening-caption p {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    #opening .opening-arrow {
+      width: 36px;
+      height: 36px;
+    }
+
+    #opening .opening-prev { left: 8px; }
+    #opening .opening-next { right: 8px; }
+
+    #opening .opening-dots { bottom: 12px; }
+
+    #opening .opening-people-meta {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    #opening .opening-person-card {
+      gap: 14px;
+      padding: 14px;
+    }
+
+    #opening .opening-person-photo {
+      flex-basis: 82px;
+      width: 82px;
+      height: 92px;
+    }
+
+    #opening .opening-person-info span {
+      font-size: 17px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #opening .opening-arrow {
+      transition: none;
+    }
+  }
+</style>
+
+<section id="opening" class="opening-section">
+  <div class="max-w-7xl mx-auto px-5">
+
+    <!-- HEADING -->
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <span class="opening-section-label">शुभारंभ समारोह</span>
+
+      <h2 class="marcellus text-3xl sm:text-5xl mt-3 text-[#123c2d]">
+        प्रेरणा कैंटीन उद्घाटन समारोह
+      </h2>
+
+      <p class="text-gray-600 mt-4 leading-7">
+        प्रेरणा कैंटीन के शुभारंभ समारोह की विशेष झलकियाँ
+      </p>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="opening-wrap mt-10 sm:mt-12 reveal"
+         id="openingSlider">
+
+      <!-- PHOTO 1 -->
+      <div class="opening-slide active">
+        <img src="images/opening1.jpg"
+             alt="प्रेरणा कैंटीन उद्घाटन समारोह">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-star"></i>
+            उद्घाटन समारोह
+          </span>
+          <h3>प्रेरणा कैंटीन का शुभारंभ</h3>
+          <p>
+            प्रेरणा कैंटीन के शुभारंभ समारोह की यादगार झलक।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 2 -->
+      <div class="opening-slide">
+        <img src="images/opening2.jpg"
+             alt="माननीय मंत्री श्री जितिन प्रसाद जी"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-user-tie"></i>
+            विशिष्ट अतिथि
+          </span>
+          <h3>माननीय मंत्री श्री जितिन प्रसाद जी</h3>
+          <p>
+            प्रेरणा कैंटीन के शुभारंभ समारोह में
+            माननीय मंत्री श्री जितिन प्रसाद जी की गरिमामयी उपस्थिति।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 3 -->
+      <div class="opening-slide">
+        <img src="images/opening3.jpg"
+             alt="माननीय विधायक श्री बाबूराम जी"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-landmark"></i>
+            गरिमामयी उपस्थिति
+          </span>
+          <h3>माननीय विधायक श्री बाबूराम जी</h3>
+          <p>
+            शुभारंभ समारोह में माननीय विधायक
+            श्री बाबूराम जी की गरिमामयी उपस्थिति।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 4 -->
+      <div class="opening-slide">
+        <img src="images/opening4.jpg"
+             alt="जिलाधिकारी, पीलीभीत"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-camera"></i>
+            यादगार पल
+          </span>
+          <h3>जिलाधिकारी, पीलीभीत</h3>
+          <p>
+            प्रेरणा कैंटीन के शुभारंभ समारोह में
+            जिलाधिकारी, पीलीभीत की गरिमामयी उपस्थिति।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 5 - ADDED -->
+      <div class="opening-slide">
+        <img src="images/opening5.jpg"
+             alt="प्रेरणा कैंटीन उद्घाटन समारोह की विशेष झलक"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-star"></i>
+            विशेष झलक
+          </span>
+          <h3>प्रेरणा कैंटीन समारोह</h3>
+          <p>
+            प्रेरणा कैंटीन के शुभारंभ समारोह की यादगार झलक।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 6 - ADDED -->
+      <div class="opening-slide">
+        <img src="images/opening6.jpg"
+             alt="प्रेरणा कैंटीन समारोह की तस्वीर"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-camera"></i>
+            यादगार पल
+          </span>
+          <h3>समारोह की खास यादें</h3>
+          <p>
+            प्रेरणा कैंटीन के शुभारंभ समारोह की विशेष झलकियाँ।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 7 - ADDED -->
+      <div class="opening-slide">
+        <img src="images/opening7.jpg"
+             alt="प्रेरणा कैंटीन शुभारंभ समारोह"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-star"></i>
+            खास पल
+          </span>
+          <h3>प्रेरणा कैंटीन की यादगार झलक</h3>
+          <p>
+            शुभारंभ समारोह के कुछ और यादगार पल।
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO 8 - ADDED -->
+      <div class="opening-slide">
+        <img src="images/opening8.jpg"
+             alt="प्रेरणा कैंटीन उद्घाटन समारोह की यादगार तस्वीर"
+             loading="lazy">
+
+        <div class="opening-overlay"></div>
+
+        <div class="opening-caption">
+          <span class="eyebrow">
+            <i class="fa-solid fa-camera"></i>
+            समारोह की झलक
+          </span>
+          <h3>प्रेरणा कैंटीन उद्घाटन समारोह</h3>
+          <p>
+            प्रेरणा कैंटीन के शुभारंभ समारोह की एक और विशेष तस्वीर।
+          </p>
+        </div>
+      </div>
+
+      <!-- ARROWS -->
+      <button type="button"
+              class="opening-arrow opening-prev"
+              aria-label="पिछली फोटो"
+              onclick="changeOpeningSlide(-1)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <button type="button"
+              class="opening-arrow opening-next"
+              aria-label="अगली फोटो"
+              onclick="changeOpeningSlide(1)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- DOTS -->
+      <div class="opening-dots">
+        <button type="button" class="opening-dot active"
+                aria-label="फोटो 1"
+                onclick="goToOpeningSlide(0)"></button>
+
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 2"
+                onclick="goToOpeningSlide(1)"></button>
+
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 3"
+                onclick="goToOpeningSlide(2)"></button>
+
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 4"
+                onclick="goToOpeningSlide(3)"></button>
+
+        <!-- FOUR NEW DOTS -->
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 5"
+                onclick="goToOpeningSlide(4)"></button>
+
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 6"
+                onclick="goToOpeningSlide(5)"></button>
+
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 7"
+                onclick="goToOpeningSlide(6)"></button>
+
+        <button type="button" class="opening-dot"
+                aria-label="फोटो 8"
+                onclick="goToOpeningSlide(7)"></button>
+      </div>
+    </div>
+
+    <!-- GUEST CARDS - UNCHANGED -->
+    <div class="opening-meta reveal opening-people-meta">
+
+      <div class="opening-meta-card opening-person-card">
+        <img src="images/jitinprasad.jpg"
+             alt="माननीय मंत्री श्री जितिन प्रसाद जी"
+             class="opening-person-photo"
+             style="object-position:25% center">
+
+        <div class="opening-person-info">
+          <strong>माननीय मंत्री</strong>
+          <span>श्री जितिन प्रसाद जी</span>
+          <small>उद्घाटन समारोह में गरिमामयी उपस्थिति</small>
+        </div>
+      </div>
+
+      <div class="opening-meta-card opening-person-card">
+        <img src="images/baburam.jpg"
+             alt="माननीय विधायक श्री बाबूराम जी"
+             class="opening-person-photo">
+
+        <div class="opening-person-info">
+          <strong>माननीय विधायक</strong>
+          <span>श्री बाबूराम जी</span>
+          <small>शुभारंभ समारोह में गरिमामयी उपस्थिति</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const slider = document.getElementById("openingSlider");
+  if (!slider || slider.dataset.initialized === "true") return;
+
+  slider.dataset.initialized = "true";
+
+  const slides = slider.querySelectorAll(".opening-slide");
+  const dots = slider.querySelectorAll(".opening-dot");
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  let autoPlay;
+
+  function showSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides.forEach(function (slide, i) {
+      slide.classList.toggle("active", i === currentIndex);
+    });
+
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+  }
+
+  window.changeOpeningSlide = function (direction) {
+    showSlide(currentIndex + direction);
+    restartAutoPlay();
+  };
+
+  window.goToOpeningSlide = function (index) {
+    showSlide(index);
+    restartAutoPlay();
+  };
+
+  function startAutoPlay() {
+    clearInterval(autoPlay);
+    autoPlay = setInterval(function () {
+      showSlide(currentIndex + 1);
+    }, 5000);
+  }
+
+  function restartAutoPlay() {
+    startAutoPlay();
+  }
+
+  slider.addEventListener("mouseenter", function () {
+    clearInterval(autoPlay);
+  });
+
+  slider.addEventListener("mouseleave", startAutoPlay);
+
+  showSlide(0);
+  startAutoPlay();
+})();
+</script>
+
+
+
+
+<!-- VISION -->
+<section id="vision" class="py-24 grid-bg">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <span class="section-label">हमारा उद्देश्य</span>
+        <h2 class="marcellus text-4xl sm:text-5xl text-[#123c2d] mt-4 mb-6">
+          स्वाद से आगे,<br><span class="text-orange-600">सशक्तिकरण तक।</span>
+        </h2>
+        <p class="text-gray-600 leading-8">
+          प्रेरणा कैंटीन का उद्देश्य केवल भोजन उपलब्ध कराना नहीं, बल्कि
+          ग्रामीण महिलाओं को <strong>सतत आजीविका</strong>, <strong>वित्तीय साक्षरता</strong> और
+          <strong>उद्यमिता</strong> के अवसर प्रदान करना है।
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mt-8">
+          <div class="card p-5">
+            <i class="fa-solid fa-hand-holding-heart text-orange-600 text-xl"></i>
+            <h3 class="font-extrabold mt-3">महिला सशक्तिकरण</h3>
+            <p class="text-sm text-gray-500 mt-2 leading-6">महिलाओं को रोजगार और प्रबंधन का अनुभव।</p>
+          </div>
+          <div class="card p-5">
+            <i class="fa-solid fa-recycle text-green-700 text-xl"></i>
+            <h3 class="font-extrabold mt-3">पर्यावरण संरक्षण</h3>
+            <p class="text-sm text-gray-500 mt-2 leading-6">एकल-उपयोग प्लास्टिक को कम करने की पहल।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative reveal">
+        <div class="rounded-[34px] overflow-hidden aspect-[4/3] shadow-2xl">
+          <img src="images/food_prep.jpg" class="image-cover" alt="Food preparation"
+               onerror="this.src='images/canteen_front.jpg'">
+        </div>
+        <div class="absolute -bottom-7 -left-4 sm:-left-8 glass rounded-3xl p-5 shadow-xl floating">
+          <div class="text-3xl font-extrabold text-[#123c2d]">ताज़ा भोजन</div>
+          <div class="text-xs text-gray-500 mt-1">सावधानी और स्वच्छता के साथ तैयार</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact" class="py-24 bg-[#123c2d] text-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-orange-300 text-xs font-extrabold tracking-[.2em] uppercase">हमारा प्रभाव</span>
+      <h2 class="marcellus text-4xl sm:text-5xl mt-3">छोटी-सी कैंटीन, बड़ा उद्देश्य।</h2>
+      <p class="text-white/65 mt-4 leading-7">हर ऑर्डर स्थानीय महिला-समूह द्वारा संचालित उद्यम को सहयोग देता है।</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
+      <div class="rounded-3xl bg-white/7 border border-white/10 p-7 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-orange-400/15 text-orange-300 grid place-items-center text-xl"><i class="fa-solid fa-users"></i></div>
+        <div class="text-4xl font-extrabold mt-7">06</div>
+        <h3 class="font-bold mt-2">स्वयं सहायता समूह की महिलाएँ</h3>
+        <p class="text-sm text-white/55 leading-6 mt-2">नियमित और स्थायी आजीविका का अवसर।</p>
+      </div>
+      <div class="rounded-3xl bg-white/7 border border-white/10 p-7 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-orange-400/15 text-orange-300 grid place-items-center text-xl"><i class="fa-solid fa-certificate"></i></div>
+        <div class="text-4xl font-extrabold mt-7">RSETI</div>
+        <h3 class="font-bold mt-2">प्रशिक्षण</h3>
+        <p class="text-sm text-white/55 leading-6 mt-2">जिला स्तर पर प्रशिक्षण और कौशल विकास।</p>
+      </div>
+      <div class="rounded-3xl bg-white/7 border border-white/10 p-7 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-orange-400/15 text-orange-300 grid place-items-center text-xl"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="text-4xl font-extrabold mt-7">100%</div>
+        <h3 class="font-bold mt-2">पारदर्शिता</h3>
+        <p class="text-sm text-white/55 leading-6 mt-2">बिचौलियों के बिना पारदर्शी आर्थिक लाभ।</p>
+      </div>
+      <div class="rounded-3xl bg-white/7 border border-white/10 p-7 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-orange-400/15 text-orange-300 grid place-items-center text-xl"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <div class="text-4xl font-extrabold mt-7">UPI</div>
+        <h3 class="font-bold mt-2">डिजिटल साक्षरता</h3>
+        <p class="text-sm text-white/55 leading-6 mt-2">डिजिटल भुगतान और बैंकिंग की जानकारी।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="py-24 bg-[#fffaf4]">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+      <div>
+        <span class="section-label">डिजिटल भोजन सूची</span>
+        <h2 class="marcellus text-4xl sm:text-5xl text-[#123c2d] mt-4">आज क्या खाएँगे?</h2>
+        <div class="menu-intro-copy">
+          <p class="menu-tagline">
+            <span class="menu-tagline-icon"><i class="fa-solid fa-leaf"></i></span>
+            <span>ताज़ा भोजन <b>•</b> उचित दाम <b>•</b> आसान ऑर्डर</span>
+          </p>
+          <p class="menu-subline">अपनी पसंद का भोजन चुनें और कुछ ही आसान चरणों में ऑर्डर करें।</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <button class="category active px-4 py-2.5 rounded-full border text-sm font-bold transition" data-cat="all">सभी</button>
+        <button class="category px-4 py-2.5 rounded-full border bg-white text-sm font-bold transition" data-cat="snacks">नाश्ता</button>
+        <button class="category px-4 py-2.5 rounded-full border bg-white text-sm font-bold transition" data-cat="drinks">पेय पदार्थ</button>
+        <button class="category px-4 py-2.5 rounded-full border bg-white text-sm font-bold transition" data-cat="meals">भोजन</button>
+      </div>
+    </div>
+
+    <div class="mt-8 max-w-xl">
+      <label for="menuSearch" class="sr-only">भोजन खोजें</label>
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input id="menuSearch" class="search-box pl-11" type="search"
+               placeholder="भोजन खोजें — जैसे समोसा, चाय, थाली..."
+               autocomplete="off">
+      </div>
+    </div>
+
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="menuGrid"></div>
+
+    <div class="mt-10 card p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5 bg-white">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-green-50 text-green-700 grid place-items-center"><i class="fa-solid fa-phone"></i></div>
+        <div>
+          <p class="font-extrabold">थोक / विशेष ऑर्डर?</p>
+          <p class="text-sm text-gray-500">संपर्क करें: <b>8192078572</b></p>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <a href="tel:+918192078572" class="btn-soft"><i class="fa-solid fa-phone"></i> कॉल करें</a>
+        <button onclick="openटोकरी()" class="btn-main"><i class="fa-solid fa-bag-shopping"></i> टोकरी देखें</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center reveal">
+      <span class="section-label">प्रेरणा की झलक</span>
+      <h2 class="marcellus text-4xl sm:text-5xl text-[#123c2d] mt-4">वास्तविक लोग, वास्तविक कार्य।</h2>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+
+  <div class="rounded-3xl overflow-hidden reveal bg-orange-50">
+    <img
+      src="images/canteen_front.jpg"
+      class="w-full h-auto object-contain hover:scale-105 transition duration-700"
+      alt="Prerna Canteen"
+      loading="lazy"
+    >
+  </div>
+
+
+<div class="rounded-3xl overflow-hidden reveal bg-orange-50">
+  <img
+    src="images/food_prepp.jpg"
+    class="w-full h-48 object-contain object-center"
+    alt="Food Preparation"
+    loading="lazy"
+  >
+</div>
+
+  <div class="rounded-3xl overflow-hidden reveal bg-orange-50">
+    <img
+      src="images/team_work.jpg"
+      class="w-full h-auto object-contain hover:scale-105 transition duration-700"
+      alt="Canteen Team"
+      loading="lazy"
+    >
+  </div>
+      <div class="rounded-3xl overflow-hidden aspect-[4/5] bg-[#123c2d] text-white p-7 flex flex-col justify-end reveal">
+        <i class="fa-solid fa-quote-left text-orange-400 text-3xl mb-auto"></i>
+        <p class="marcellus text-2xl leading-9">“हमारा काम, हमारी पहचान।”</p>
+        <p class="text-sm text-white/55 mt-3">— प्रेरणा कैंटीन टीम</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="py-24 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="bg-orange-100 text-orange-700 font-extrabold text-[10px] tracking-widest px-3 py-1.5 rounded-full uppercase inline-block mb-3 border border-orange-200">
+                    नागरिक प्रतिक्रिया प्रणाली
+                </span>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 serif-heading tracking-tight">डिजिटल सुझाव एवं समीक्षा</h3>
+                <div class="w-16 h-1 bg-orange-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-xs text-slate-500 mt-4 font-light max-w-md mx-auto leading-relaxed">कैंटीन की भोजन गुणवत्ता, स्वच्छता और व्यवस्था को और सुदृढ़ बनाने के लिए अपना बहुमूल्य फीडबैक सीधे साझा करें.</p>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-200 max-w-2xl mx-auto">
+                <form action="https://formspree.io/f/maqzdwje" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">आपका पूरा नाम <span class="text-orange-500">*</span></label>
+                            <div class="relative flex items-center">
+                                <span class="absolute left-4 text-slate-400 text-xs">
+                                    <i class="fa-regular fa-user"></i>
+                                </span>
+                                <input type="text" name="Name" required placeholder="जैसे: सुमित सिंह" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-xs font-medium text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">मोबाइल नंबर</label>
+                            <div class="relative flex items-center">
+                                <span class="absolute left-4 text-slate-400 text-xs">
+                                    <i class="fa-solid fa-phone-clip"></i>
+                                </span>
+                                <input type="tel" name="Mobile" placeholder="जैसे: 9876XXXXXX" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-xs font-medium text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">आपकी श्रेणी / पद</label>
+                        <div class="relative flex items-center">
+                            <span class="absolute left-4 text-slate-400 text-xs">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </span>
+                            <select name="Category" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-10 py-3.5 text-xs font-medium text-slate-800 outline-none transition-all cursor-pointer appearance-none focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10">
+                                <option value="Local Visitor">आम नागरिक / फरियादी</option>
+                                <option value="Advocate">अधिवक्ता (Advocate)</option>
+                                <option value="Government Employee">सरकारी कर्मचारी / अधिकारी</option>
+                                <option value="Other">अन्य</option>
+                            </select>
+                            <span class="absolute right-4 text-slate-400 pointer-events-none text-[10px]">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">कैंटीन रेटिंग (Star Rating)</label>
+                        <div class="relative flex items-center">
+                            <span class="absolute left-4 text-slate-400 text-xs">
+                                <i class="fa-regular fa-star-half-stroke"></i>
+                            </span>
+                            <select name="Rating" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-10 py-3.5 text-xs font-bold text-amber-500 outline-none transition-all cursor-pointer appearance-none focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10">
+                                <option value="5 Stars" class="font-semibold text-amber-600">⭐⭐⭐⭐⭐ &nbsp;(5/5 - सर्वोत्कृष्ट)</option>
+                                <option value="4 Stars" class="font-semibold text-amber-600">⭐⭐⭐⭐ &nbsp;(4/5 - बहुत उत्तम)</option>
+                                <option value="3 Stars" class="font-semibold text-amber-600">⭐⭐⭐ &nbsp;(3/5 - संतोषजनक)</option>
+                                <option value="2 Stars" class="font-semibold text-amber-600">⭐⭐ &nbsp;(2/5 - सुधार अपेक्षित)</option>
+                            </select>
+                            <span class="absolute right-4 text-slate-400 pointer-events-none text-[10px]">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">आपका सुझाव / संदेश <span class="text-orange-500">*</span></label>
+                        <div class="relative flex">
+                            <span class="absolute left-4 top-4 text-slate-400 text-xs">
+                                <i class="fa-regular fa-comment-dots"></i>
+                            </span>
+                            <textarea name="Feedback Message" rows="4" required placeholder="भोजन के स्वाद, स्वच्छता या दीदियों के व्यवहार के संबंध में अपनी प्रतिक्रिया विस्तार से दर्ज करें..." class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-xs font-medium text-slate-900 placeholder-slate-400 outline-none transition-all resize-none h-32 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"></textarea>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="नया प्रेरणा कैंटीन फीडबैक प्राप्त हुआ!">
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-amber-600 text-white font-extrabold py-4 rounded-xl text-xs uppercase tracking-widest cursor-pointer flex items-center justify-center space-x-2.5 transition-all shadow-md shadow-orange-600/20 hover:from-orange-700 hover:to-amber-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-500/30">
+                            <i class="fa-solid fa-paper-plane"></i> 
+                            <span>फीडबैक सुरक्षित सबमिट करें</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- TEAM -->
+<section id="team" class="py-24 bg-[#fffaf4]">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl reveal">
+      <span class="section-label">हमारी टीम</span>
+      <h2 class="marcellus text-4xl sm:text-5xl text-[#123c2d] mt-4">प्रेरणा के पीछे हमारी महिलाएँ।</h2>
+      <p class="text-gray-500 mt-4 leading-7">आरसेटी प्रशिक्षित स्वयं सहायता समूह की टीम, जो रसोई से लेकर प्रबंधन तक पूरी जिम्मेदारी संभालती है।</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+      <div class="card p-6 reveal"><div class="w-16 h-16 rounded-2xl bg-orange-100 text-orange-700 grid place-items-center text-2xl"><i class="fa-solid fa-user-tie"></i></div><h3 class="font-extrabold mt-5">श्रीमती सोनम</h3><p class="text-orange-600 text-sm font-bold mt-1">समूह अध्यक्ष / प्रबंधन</p><p class="text-gray-500 text-sm leading-6 mt-3">टीम समन्वय और दैनिक प्रबंधन।</p></div>
+      <div class="card p-6 reveal"><div class="w-16 h-16 rounded-2xl bg-red-100 text-red-700 grid place-items-center text-2xl"><i class="fa-solid fa-utensils"></i></div><h3 class="font-extrabold mt-5">श्रीमती नीतू राठौर</h3><p class="text-orange-600 text-sm font-bold mt-1">कोषाध्यक्ष / मुख्य शेफ</p><p class="text-gray-500 text-sm leading-6 mt-3">रसोई की गुणवत्ता और वित्तीय जिम्मेदारी।</p></div>
+      <div class="card p-6 reveal"><div class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-700 grid place-items-center text-2xl"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3 class="font-extrabold mt-5">श्रीमती अंजली</h3><p class="text-orange-600 text-sm font-bold mt-1">सदस्य / गुणवत्ता विश्लेषक</p><p class="text-gray-500 text-sm leading-6 mt-3">भोजन की गुणवत्ता और ग्राहक अनुभव।</p></div>
+      <div class="card p-6 reveal"><div class="w-16 h-16 rounded-2xl bg-purple-100 text-purple-700 grid place-items-center text-2xl"><i class="fa-solid fa-concierge-bell"></i></div><h3 class="font-extrabold mt-5">श्रीमती सीमा</h3><p class="text-orange-600 text-sm font-bold mt-1">सदस्य / सेवा प्रबंधन</p><p class="text-gray-500 text-sm leading-6 mt-3">ग्राहक सेवा और ऑर्डर प्रबंधन।</p></div>
+      <div class="card p-6 reveal"><div class="w-16 h-16 rounded-2xl bg-green-100 text-green-700 grid place-items-center text-2xl"><i class="fa-solid fa-boxes-stacked"></i></div><h3 class="font-extrabold mt-5">श्रीमती उर्फी</h3><p class="text-orange-600 text-sm font-bold mt-1">सदस्य / इन्वेंटरी प्रभारी</p><p class="text-gray-500 text-sm leading-6 mt-3">भंडार और सामग्री प्रबंधन।</p></div>
+      <div class="card p-6 reveal"><div class="w-16 h-16 rounded-2xl bg-pink-100 text-pink-700 grid place-items-center text-2xl"><i class="fa-solid fa-hands-bubbles"></i></div><h3 class="font-extrabold mt-5">श्रीमती सबा</h3><p class="text-orange-600 text-sm font-bold mt-1">सदस्य / स्वच्छता विशेषज्ञ</p><p class="text-gray-500 text-sm leading-6 mt-3">स्वच्छता और स्वच्छ रसोई के मानक।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICIALS -->
+<section id="officers" class="py-24">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center reveal">
+      <span class="section-label">मार्गदर्शन एवं सहयोग</span>
+      <h2 class="marcellus text-4xl sm:text-5xl text-[#123c2d] mt-4">हमारे अधिकारीगण</h2>
+      <p class="text-gray-500 mt-3">प्रशासनिक सहयोग एवं मार्गदर्शन</p>
+    </div>
+
+    <!-- DM -->
+    <div class="flex justify-center mt-12 mb-8">
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl w-full max-w-sm reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/dm.jpg.jpg" class="w-full h-auto object-contain" alt="DM" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5">
+          <h3 class="font-extrabold text-gray-900 text-xl">श्री ज्ञानेन्द्र सिंह (IAS)</h3>
+          <p class="text-orange-600 text-sm font-semibold mt-1">जिलाधिकारी, पीलीभीत</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Remaining Officers -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- CDO -->
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/cdo.jpg.jpg" class="w-full h-auto object-contain" alt="CDO" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5"><h3 class="font-extrabold text-gray-900 text-lg">श्री सतीश प्रसाद मिश्रा</h3><p class="text-orange-600 text-sm font-semibold mt-1">मुख्य विकास अधिकारी, पीलीभीत</p></div>
+      </div>
+
+      <!-- DC -->
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/dc.jpg.jpg" class="w-full h-auto object-contain" alt="DC" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5"><h3 class="font-extrabold text-gray-900 text-lg">श्रीमती वंदना सिंह</h3><p class="text-orange-600 text-sm font-semibold mt-1">उपायुक्त, स्वतः रोजगार — पीलीभीत</p></div>
+      </div>
+
+      <!-- BDO 1 -->
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/bdo.jpg.jpg" class="w-full h-auto object-contain" alt="BDO" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5"><h3 class="font-extrabold text-gray-900 text-lg">श्री हेमन्त कुमार यादव</h3><p class="text-orange-600 text-sm font-semibold mt-1">खंड विकास अधिकारी, पूरनपुर, पीलीभीत</p></div>
+      </div>
+
+      <!-- BDO 2 -->
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/ado.jpg.jpg" class="w-full h-auto object-contain" alt="BDO" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5"><h3 class="font-extrabold text-gray-900 text-lg">श्री राजेश कुमार</h3><p class="text-orange-600 text-sm font-semibold mt-1">सहायक विकास अधिकारी (ग्राम्य विकास), पूरनपुर</p></div>
+      </div>
+
+      <!-- ADO -->
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/mp.jpg" class="w-full h-auto object-contain" alt="ADO" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5"><h3 class="font-extrabold text-gray-900 text-lg">श्री अवधेश उपाध्याय</h3><p class="text-orange-600 text-sm font-semibold mt-1">जिला मिशन प्रबंधक,यूपीएसआरएलएम, पीलीभीत</p></div>
+      </div>
+
+      <!-- BMM -->
+      <div class="card bg-white rounded-2xl shadow-lg border-t-4 border-orange-500 overflow-hidden text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl reveal">
+        <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="images/bmm.jpg.jpeg" class="w-full h-auto object-contain" alt="BMM" onerror="this.style.display='none'">
+        </div>
+        <div class="p-5"><h3 class="font-extrabold text-gray-900 text-lg">श्री रविंद्र कुमार</h3><p class="text-orange-600 text-sm font-semibold mt-1">ब्लॉक मिशन प्रबंधक, यूपीएसआरएलएम, पूरनपुर</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-[#123c2d] text-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-2 gap-10">
+      <div class="reveal">
+        <span class="text-orange-300 text-xs font-extrabold tracking-[.2em] uppercase">स्थान एवं संपर्क</span>
+        <h2 class="marcellus text-4xl sm:text-5xl mt-4">आइए, स्वाद के लिए।<br>खुश होकर लौटिए।</h2>
+
+        <div class="space-y-5 mt-10">
+          <div class="flex gap-4"><div class="w-11 h-11 rounded-xl bg-white/10 grid place-items-center text-orange-300"><i class="fa-solid fa-location-dot"></i></div><div><b>पता</b><p class="text-white/55 text-sm mt-1">तहसील परिसर, पूरनपुर, पीलीभीत</p></div></div>
+          <div class="flex gap-4"><div class="w-11 h-11 rounded-xl bg-white/10 grid place-items-center text-orange-300"><i class="fa-solid fa-clock"></i></div><div><b>खुलने का समय</b><p class="text-white/55 text-sm mt-1">सोमवार – शनिवार · 09:00 – 17:00</p></div></div>
+          <div class="flex gap-4"><div class="w-11 h-11 rounded-xl bg-white/10 grid place-items-center text-orange-300"><i class="fa-solid fa-phone"></i></div><div><b>कॉल करें</b><p class="text-white/55 text-sm mt-1">+91 6387197824</p></div></div>
+          <div class="flex gap-4"><div class="w-11 h-11 rounded-xl bg-white/10 grid place-items-center text-orange-300"><i class="fa-solid fa-envelope"></i></div><div><b>ई-मेल</b><p class="text-white/55 text-sm mt-1">bmmupuranpur@gmail.com</p></div></div>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-10">
+          <a href="tel:+916387197824" class="btn-main"><i class="fa-solid fa-phone"></i> कॉल करें Now</a>
+          <a href="https://wa.me/918192078572" target="_blank" rel="noopener noreferrer" class="btn-soft !bg-white/10 !text-white !border-white/10"><i class="fa-brands fa-whatsapp text-green-400"></i> व्हाट्सऐप</a>
+        </div>
+      </div>
+
+      <div class="rounded-[30px] overflow-hidden min-h-[420px] bg-white/10 reveal">
+        <iframe
+          src="https://www.google.com/maps?q=Tehsil+Parisar+Puranpur+Pilibhit+Uttar+Pradesh&output=embed"
+          class="w-full h-full min-h-[420px] border-0"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING ACTIONS -->
+<div class="floating-actions">
+  <button id="backTop" class="float-btn back-top bg-white text-[#123c2d]"
+          aria-label="ऊपर जाएँ">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<div id="stickyCart" class="sticky-cart">
+  <div class="flex items-center justify-between gap-3">
+    <div>
+      <p class="text-xs text-gray-500 font-bold">आपकी टोकरी</p>
+      <p id="stickyCartText" class="font-extrabold text-[#123c2d]">0 वस्तुएँ • ₹0</p>
+    </div>
+    <button onclick="openटोकरी()" class="btn-main !py-3 !px-5">
+      <i class="fa-solid fa-bag-shopping"></i> टोकरी देखें
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer class="bg-[#091d16] text-white py-14">
+  <div class="max-w-6xl mx-auto px-5 text-center">
+
+    <!-- SHG TITLE -->
+    <div class="text-[#f5c542] text-sm sm:text-base font-extrabold tracking-[.15em] uppercase">
+      👑 स्वयं सहायता समूह 👑
+    </div>
+
+    <!-- CANTEEN NAME -->
+    <h2 class="marcellus text-2xl sm:text-3xl font-bold mt-7 text-white">
+      नारी शक्ति मॉडल प्रेरणा कैंटीन
+    </h2>
+
+    <!-- DESCRIPTION -->
+    <p class="text-white/80 text-sm sm:text-base leading-7 max-w-5xl mx-auto mt-6">
+      उत्तर प्रदेश राज्य ग्रामीण आजीविका मिशन (UPSRLM) पूरनपुर, पीलीभीत के अंतर्गत
+      महिला सशक्तिकरण, रोजगार सृजन और स्वच्छता का गौरवशाली प्रतीक।
+    </p>
+
+    <!-- WEBSITE DEVELOPMENT / DEVELOPER IDENTITY -->
+    <div class="mt-10 mx-auto max-w-4xl rounded-3xl border border-white/10 bg-white/[0.06] px-6 py-7 sm:px-8 sm:py-8 shadow-xl">
+
+      <span class="inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[.16em] text-[#f5c542]">
+        Website Development
+      </span>
+
+      <h3 class="marcellus text-2xl sm:text-3xl text-white mt-4">
+        Prerna Canteen Digital Experience
+      </h3>
+
+      <p class="text-white/80 mt-2">
+        Designed &amp; Developed by
+        <strong class="text-white">Hemant Raj</strong>
+      </p>
+
+      <p class="text-white/55 text-sm mt-1">
+        Frontend Developer &amp; Web Designer
+      </p>
+
+      <!-- SOCIAL MEDIA LOGOS -->
+      <div class="mt-6 flex flex-wrap justify-center items-center gap-4">
+
+        <!-- INSTAGRAM -->
+        <a
+          href="https://instagram.com/hemantraj.0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Hemant Raj on Instagram"
+          title="Instagram"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white text-2xl shadow-lg hover:scale-110 hover:shadow-pink-500/30 transition-all duration-300"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- LINKEDIN -->
+        <a
+          href="https://www.linkedin.com/in/hemant-raj-2a2639326/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Hemant Raj on LinkedIn"
+          title="LinkedIn"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#0A66C2] text-white text-2xl shadow-lg hover:scale-110 hover:shadow-blue-500/30 transition-all duration-300"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <!-- FACEBOOK -->
+        <a
+          href="https://www.facebook.com/share/1dTn3riJPa/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Hemant Raj on Facebook"
+          title="Facebook"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#1877F2] text-white text-2xl shadow-lg hover:scale-110 hover:shadow-blue-500/30 transition-all duration-300"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <!-- GITHUB -->
+        <a
+          href="https://github.com/HEMANT-RAJ-RAWAT"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Hemant Raj on GitHub"
+          title="GitHub"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#24292f] text-white text-2xl shadow-lg hover:scale-110 hover:shadow-white/20 transition-all duration-300"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <!-- X / TWITTER -->
+        <a
+          href="https://x.com/hemantr42078975?s=11"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Hemant Raj on X"
+          title="X"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-black border border-white/20 text-white text-xl shadow-lg hover:scale-110 hover:shadow-white/20 transition-all duration-300"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="mt-7 pt-5 border-t border-white/10">
+        <p class="text-white/60 text-xs sm:text-sm">
+          © 2026 Prerna Canteen. All Rights Reserved.
+        </p>
+        <p class="text-white/40 text-[11px] mt-1">
+          Digital Experience &amp; Website Development
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="fixed right-5 bottom-24 md:bottom-7 z-50 flex flex-col gap-3">
+  <a href="https://wa.me/918192078572" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center text-2xl shadow-xl hover:scale-110 transition" title="व्हाट्सऐप">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <button onclick="openटोकरी()" class="relative w-14 h-14 rounded-full bg-[#f97316] text-white grid place-items-center text-xl shadow-xl hover:scale-110 transition" title="टोकरी">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span id="floatBadge" class="cart-badge">0</span>
+  </button>
+</div>
+
+<!-- MOBILE BOTTOM NAV -->
+<div class="mobile-nav fixed bottom-0 left-0 right-0 z-[60] bg-white/95 backdrop-blur-xl border-t border-gray-200 px-4 py-2 justify-around shadow-2xl">
+  <a href="#home" class="text-center text-gray-500 text-[10px] font-bold"><i class="fa-solid fa-house text-base block mb-1"></i>मुख्य पृष्ठ</a>
+  <a href="#menu" class="text-center text-gray-500 text-[10px] font-bold"><i class="fa-solid fa-utensils text-base block mb-1"></i>भोजन सूची</a>
+  <button onclick="openटोकरी()" class="text-center text-orange-600 text-[10px] font-bold"><i class="fa-solid fa-bag-shopping text-base block mb-1"></i>टोकरी</button>
+  <a href="#team" class="text-center text-gray-500 text-[10px] font-bold"><i class="fa-solid fa-users text-base block mb-1"></i>हमारी टीम</a>
+  <a href="#contact" class="text-center text-gray-500 text-[10px] font-bold"><i class="fa-solid fa-location-dot text-base block mb-1"></i>स्थान</a>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay" onclick="closeसभी()"></div>
+
+<!-- CART DRAWER -->
+<aside id="cartDrawer" class="drawer">
+  <div class="p-5 border-b">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-[.15em] text-orange-600 font-extrabold">आपका ऑर्डर</p>
+        <h2 class="text-2xl font-extrabold text-[#123c2d] mt-1">मेरी टोकरी</h2>
+      </div>
+      <button onclick="closeटोकरी()" class="w-10 h-10 rounded-xl bg-gray-100 grid place-items-center"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
+
+  <div class="p-5 border-t bg-[#fffaf4]">
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-gray-500">कुल राशि</span>
+      <span id="cartTotal" class="text-2xl font-extrabold text-[#123c2d]">₹0</span>
+    </div>
+    <button onclick="openOrderModal()" class="btn-main w-full">
+      <i class="fa-brands fa-whatsapp"></i> व्हाट्सऐप से ऑर्डर करें
+    </button>
+    <button onclick="openPaymentModal()" class="btn-soft w-full mt-2">
+      <i class="fa-solid fa-qrcode"></i> यूपीआई से भुगतान करें
+    </button>
+  </div>
+</aside>
+
+<!-- ORDER MODAL -->
+<div id="orderModal" class="modal">
+  <div class="bg-white w-full max-w-lg rounded-[30px] overflow-hidden shadow-2xl">
+    <div class="p-6 bg-[#123c2d] text-white">
+      <div class="flex items-center justify-between">
+        <div><p class="text-orange-300 text-xs font-extrabold uppercase tracking-widest">त्वरित ऑर्डर</p><h2 class="text-2xl font-extrabold mt-1">व्हाट्सऐप ऑर्डर करें</h2></div>
+        <button onclick="closeOrderModal()" class="w-10 h-10 rounded-xl bg-white/10"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+    <div class="p-6">
+      <label class="text-sm font-bold">आपका नाम</label>
+      <input id="customerName" class="input mt-2" placeholder="अपना नाम दर्ज करें">
+
+      <label class="text-sm font-bold block mt-4">ऑर्डर का प्रकार</label>
+      <select id="orderType" class="input mt-2">
+        <option>कैंटीन से प्राप्त करें</option>
+        <option>टेबल पर ऑर्डर</option>
+      </select>
+
+      <div class="mt-5 rounded-2xl bg-[#fffaf4] p-4">
+        <div class="flex justify-between text-sm"><span>वस्तुएँ</span><b id="modalItemCount">0</b></div>
+        <div class="flex justify-between mt-2"><span>कुल राशि</span><b id="modalTotal">₹0</b></div>
+      </div>
+
+      <button onclick="sendWhatsAppOrder()" class="btn-main w-full mt-5">
+        <i class="fa-brands fa-whatsapp text-lg"></i> ऑर्डर भेजें
+      </button>
+      <p class="text-[11px] text-gray-400 text-center mt-3">व्हाट्सऐप will open with your order details.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="modal">
+  <div class="bg-white w-full max-w-md rounded-[30px] p-7 text-center shadow-2xl">
+    <button onclick="closePaymentModal()" class="w-10 h-10 rounded-xl bg-gray-100 grid place-items-center ml-auto"><i class="fa-solid fa-xmark"></i></button>
+    <div class="w-16 h-16 rounded-2xl bg-green-50 text-green-700 grid place-items-center text-2xl mx-auto mt-1"><i class="fa-solid fa-qrcode"></i></div>
+    <h2 class="text-2xl font-extrabold text-[#123c2d] mt-5">यूपीआई भुगतान</h2>
+    <p class="text-gray-500 text-sm mt-2">वेबसाइट प्रकाशित करने से पहले जावास्क्रिप्ट में यूपीआई आईडी बदलें।</p>
+
+    <div class="my-6 p-5 rounded-3xl bg-[#fffaf4]">
+      <div class="text-xs text-gray-500">भुगतान योग्य राशि</div>
+      <div id="paymentAmount" class="text-4xl font-extrabold text-[#123c2d] mt-2">₹0</div>
+      <div class="text-xs font-bold text-orange-600 mt-2">अपनी_यूपीआई_आईडी@upi</div>
+    </div>
+
+    <button onclick="startUPIPayment()" class="btn-main w-full">
+      <i class="fa-solid fa-indian-rupee-sign"></i> यूपीआई ऐप खोलें
+    </button>
+    <p class="text-[11px] text-gray-400 mt-3">इस संस्करण में भुगतान की स्वचालित पुष्टि उपलब्ध नहीं है।</p>
+  </div>
+</div>
+
+<script>
+  // =========================
+  // MENU DATA
+  // =========================
+  const menu = [
+    {id:1,name:"समोसा",price:10,cat:"snacks",icon:"fa-cookie-bite"},
+    {id:2,name:"प्याज़ पकौड़ी",price:20,cat:"snacks",icon:"fa-bowl-food",sub:"100g"},
+    {id:3,name:"पनीर पकौड़ी",price:40,cat:"snacks",icon:"fa-cheese",sub:"100g"},
+    {id:4,name:"ब्रेड पकौड़ी",price:10,cat:"snacks",icon:"fa-bread-slice"},
+    {id:5,name:"लस्सी",price:30,cat:"drinks",icon:"fa-glass-water"},
+    {id:6,name:"कुल्हड़ चाय",price:10,cat:"drinks",icon:"fa-mug-hot"},
+    {id:7,name:"शीतल पेय",price:0,cat:"drinks",icon:"fa-bottle-water",mrp:true},
+    {id:8,name:"पानी की बोतल",price:0,cat:"drinks",icon:"fa-bottle-water",mrp:true},
+    {id:9,name:"कढ़ी चावल",price:40,cat:"meals",icon:"fa-bowl-rice"},
+    {id:10,name:"राजमा चावल",price:40,cat:"meals",icon:"fa-bowl-rice"},
+    {id:11,name:"छोले चावल",price:40,cat:"meals",icon:"fa-bowl-rice"},
+    {id:12,name:"5 पूरी + सब्ज़ी + रायता",price:50,cat:"meals",icon:"fa-plate-wheat"},
+    {id:13,name:"विशेष थाली",price:60,cat:"meals",icon:"fa-utensils",sub:"दाल, चावल, रोटी, सब्ज़ी, अचार, सलाद"}
+  ];
+
+  let cart = JSON.parse(localStorage.getItem("prerna_cart") || "[]");
+
+  function money(price){
+    return price === 0 ? "MRP" : "₹" + price;
+  }
+
+  function renderMenu(category="all"){
+    const grid = document.getElementById("menuGrid");
+    const search = (document.getElementById("menuSearch")?.value || "").trim().toLowerCase();
+
+    let items = category === "all" ? menu : menu.filter(x => x.cat === category);
+    if(search){
+      items = items.filter(x => `${x.name} ${x.sub || ""}`.toLowerCase().includes(search));
+    }
+
+    if(!items.length){
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-orange-50 text-orange-600 grid place-items-center text-2xl">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <h3 class="font-extrabold text-xl mt-4 text-[#123c2d]">कोई भोजन नहीं मिला</h3>
+          <p class="text-sm text-gray-500 mt-2">कृपया दूसरा नाम या श्रेणी चुनें।</p>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = items.map(item => `
+      <article class="food-card p-5 reveal show">
+        <div class="flex items-start justify-between gap-3">
+          <div class="food-icon"><i class="fa-solid ${item.icon}"></i></div>
+          <span class="text-xs font-extrabold px-3 py-1.5 rounded-full bg-green-50 text-green-700">
+            ${item.mrp ? "वर्तमान मूल्य" : "उपलब्ध"}
+          </span>
+        </div>
+        <h3 class="font-extrabold text-lg text-[#123c2d] mt-5">${item.name}</h3>
+        <p class="text-xs text-gray-500 mt-1 min-h-[18px]">${item.sub || "ताज़ा तैयार किया गया"}</p>
+        <div class="flex items-center justify-between gap-3 mt-5">
+          <div>
+            <div class="text-xl font-extrabold text-orange-600">${money(item.price)}</div>
+            ${item.mrp ? `<div class="text-[11px] text-gray-400 mt-1">बोतल/पैक के अनुसार</div>` : ""}
+          </div>
+          <button class="btn-main add-btn !py-3 !px-4" onclick="addToटोकरी(${item.id})">
+            <i class="fa-solid fa-plus"></i> जोड़ें
+          </button>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  function addToटोकरी(id){
+    const item = menu.find(x => x.id === id);
+    if(!item || item.price === 0){
+      alert("इस वस्तु का मूल्य एमआरपी के अनुसार है। कृपया कैंटीन पर मूल्य की पुष्टि करें।");
+      return;
+    }
+
+    const existing = cart.find(x => x.id === id);
+    if(existing) existing.qty++;
+    else cart.push({...item,qty:1});
+
+    saveटोकरी();
+    openटोकरी();
+  }
+
+  function changeQty(id,delta){
+    const item = cart.find(x => x.id === id);
+    if(!item) return;
+    item.qty += delta;
+    if(item.qty <= 0) cart = cart.filter(x => x.id !== id);
+    saveटोकरी();
+  }
+
+  function saveटोकरी(){
+    localStorage.setItem("prerna_cart",JSON.stringify(cart));
+    renderटोकरी();
+    updateBadges();
+  }
+
+  function getTotal(){
+    return cart.reduce((sum,item) => sum + (item.price * item.qty),0);
+  }
+
+  function getCount(){
+    return cart.reduce((sum,item) => sum + item.qty,0);
+  }
+
+  function renderटोकरी(){
+    const box = document.getElementById("cartItems");
+
+    if(cart.length === 0){
+      box.innerHTML = `
+        <div class="h-full min-h-[300px] flex flex-col items-center justify-center text-center">
+          <div class="w-20 h-20 rounded-3xl bg-[#fff3e9] text-orange-500 grid place-items-center text-3xl">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <h3 class="font-extrabold text-xl mt-5">टोकरी खाली है</h3>
+          <p class="text-sm text-gray-400 mt-2">भोजन सूची से अपना पसंदीदा भोजन जोड़ें।</p>
+          <a href="#menu" onclick="closeटोकरी()" class="btn-main mt-5">भोजन सूची देखें</a>
+        </div>`;
+    }else{
+      box.innerHTML = cart.map(item => `
+        <div class="rounded-2xl border border-gray-100 p-4 flex gap-3">
+          <div class="food-icon shrink-0"><i class="fa-solid ${item.icon}"></i></div>
+          <div class="flex-1 min-w-0">
+            <div class="font-bold truncate">${item.name}</div>
+            <div class="text-sm text-gray-400 mt-1">₹${item.price} × ${item.qty}</div>
+            <div class="flex items-center gap-2 mt-3">
+              <button onclick="changeQty(${item.id},-1)" class="w-8 h-8 rounded-lg bg-gray-100">−</button>
+              <span class="w-6 text-center font-bold">${item.qty}</span>
+              <button onclick="changeQty(${item.id},1)" class="w-8 h-8 rounded-lg bg-[#123c2d] text-white">+</button>
+            </div>
+          </div>
+          <div class="font-extrabold">₹${item.price * item.qty}</div>
+        </div>
+      `).join("");
+    }
+
+    document.getElementById("cartTotal").textContent = "₹" + getTotal();
+  }
+
+  function updateBadges(){
+    const count = getCount();
+    document.getElementById("cartBadge").textContent = count;
+    document.getElementById("floatBadge").textContent = count;
+  }
+
+  function openटोकरी(){
+    document.getElementById("cartDrawer").classList.add("open");
+    document.getElementById("overlay").classList.add("open");
+    renderटोकरी();
+  }
+
+  function closeटोकरी(){
+    document.getElementById("cartDrawer").classList.remove("open");
+    document.getElementById("overlay").classList.remove("open");
+  }
+
+  function closeAll(){
+    closeटोकरी();
+    closeOrderModal();
+    closePaymentModal();
+  }
+
+  function openOrderModal(){
+    if(cart.length === 0){
+      alert("पहले टोकरी में कोई वस्तु जोड़ें।");
+      return;
+    }
+    closeटोकरी();
+    document.getElementById("modalItemCount").textContent = getCount();
+    document.getElementById("modalTotal").textContent = "₹" + getTotal();
+    document.getElementById("orderModal").classList.add("open");
+  }
+
+  function closeOrderModal(){
+    document.getElementById("orderModal").classList.remove("open");
+  }
+
+  function sendWhatsAppOrder(){
+    const name = document.getElementById("customerName").value.trim() || "Customer";
+    const type = document.getElementById("orderType").value;
+
+    let text = `*PRERNA CANTEEN - NEW ORDER*%0A%0A`;
+    text += `नाम: ${encodeURIComponent(name)}%0A`;
+    text += `प्रकार: ${encodeURIComponent(type)}%0A%0A`;
+    text += `*ऑर्डर करें:*%0A`;
+
+    cart.forEach(item => {
+      text += `• ${encodeURIComponent(item.name)} x ${item.qty} = ₹${item.price * item.qty}%0A`;
+    });
+
+    text += `%0A*कुल राशि: ₹${getTotal()}*%0A%0A`;
+    text += `कृपया मेरा ऑर्डर स्वीकार करें।`;
+
+    window.open(`https://wa.me/918192078572?text=${text}`,"_blank");
+  }
+
+  function openPaymentModal(){
+    if(cart.length === 0){
+      alert("पहले टोकरी में कोई वस्तु जोड़ें।");
+      return;
+    }
+    closeटोकरी();
+    document.getElementById("paymentAmount").textContent = "₹" + getTotal();
+    document.getElementById("paymentModal").classList.add("open");
+  }
+
+  function closePaymentModal(){
+    document.getElementById("paymentModal").classList.remove("open");
+  }
+
+  function startUPIPayment(){
+    // IMPORTANT: Replace this with the real canteen UPI ID.
+    const UPI_ID = "YOUR_UPI_ID@upi";
+    const amount = getTotal();
+    const url = `upi://pay?pa=${UPI_ID}&pn=Prerna%20Canteen&am=${amount}&cu=INR&tn=Prerna%20Canteen%20Order`;
+    window.location.href = url;
+  }
+
+  // Category filter
+  document.querySelectorAll(".category").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".category").forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      renderMenu(btn.dataset.cat);
+    });
+  });
+
+  // Reveal animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  // Initial
+  renderMenu();
+  renderटोकरी();
+  updateBadges();
+
+  /* =========================
+     ADVANCED WEBSITE BEHAVIOUR
+     ========================= */
+  const menuSearch = document.getElementById("menuSearch");
+  if(menuSearch){
+    menuSearch.addEventListener("input", () => {
+      const active = document.querySelector(".category.active")?.dataset.cat || "all";
+      renderMenu(active);
+    });
+  }
+
+  // Mobile navigation
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  mobileMenuBtn?.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+    mobileMenuBtn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+  document.querySelectorAll(".mobile-link").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      mobileMenuBtn?.setAttribute("aria-expanded","false");
+      if(mobileMenuBtn) mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  // Scroll progress + back-to-top
+  const topProgress = document.getElementById("topProgress");
+  const backTop = document.getElementById("backTop");
+  const stickyCart = document.getElementById("stickyCart");
+  const stickyCartText = document.getElementById("stickyCartText");
+
+  function updateAdvancedUI(){
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
+    if(topProgress) topProgress.style.width = `${progress}%`;
+
+    if(backTop) backTop.classList.toggle("show", window.scrollY > 550);
+
+    const count = typeof getCount === "function" ? getCount() : 0;
+    const total = typeof getTotal === "function" ? getTotal() : 0;
+    if(stickyCart){
+      stickyCart.classList.toggle("show", count > 0 && window.scrollY > 650);
+      if(stickyCartText) stickyCartText.textContent = `${count} वस्तुएँ • ₹${total}`;
+    }
+  }
+  window.addEventListener("scroll", updateAdvancedUI, {passive:true});
+  updateAdvancedUI();
+
+  backTop?.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+
+  // Professional toast notification
+  window.showToast = function(message){
+    const toast = document.getElementById("toast");
+    if(!toast) return;
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+  };
+
+  // Reliable opening-slider initialization (the original slider code was
+  // placed inside the external Tailwind script tag, so this initializes it safely).
+  const slides = document.querySelectorAll(".opening-slide");
+  const dots = document.querySelectorAll(".opening-dot");
+  let currentSlide = 0;
+  let slideTimer = null;
+
+  function showSlide(index){
+    if(!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide,i) => slide.classList.toggle("active", i === currentSlide));
+    dots.forEach((dot,i) => dot.classList.toggle("active", i === currentSlide));
+  }
+  function startSlideTimer(){
+    clearInterval(slideTimer);
+    slideTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+  }
+  window.changeOpeningSlide = function(direction){
+    showSlide(currentSlide + direction);
+    startSlideTimer();
+  };
+  window.goToOpeningSlide = function(index){
+    showSlide(index);
+    startSlideTimer();
+  };
+  if(slides.length){
+    showSlide(0);
+    startSlideTimer();
+    const slider = document.getElementById("openingSlider");
+    slider?.addEventListener("mouseenter", () => clearInterval(slideTimer));
+    slider?.addEventListener("mouseleave", startSlideTimer);
+  }
+
+  // Active section highlighting
+  const navLinks = [...document.querySelectorAll(".desktop-nav a")];
+  const sections = [...document.querySelectorAll("main section[id], section[id]")];
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        navLinks.forEach(a => a.classList.toggle("text-orange-600", a.getAttribute("href") === `#${entry.target.id}`));
+      }
+    });
+  }, {rootMargin:"-35% 0px -55% 0px"});
+  sections.forEach(section => sectionObserver.observe(section));
+
+  // Wrap add-to-cart with a small user-friendly confirmation without
+  // changing the existing cart logic.
+  const originalAddToCart = window.addToटोकरी;
+  if(typeof originalAddToCart === "function"){
+    window.addToटोकरी = function(id){
+      originalAddToCart(id);
+      const item = menu.find(x => x.id === id);
+      showToast(`${item?.name || "भोजन"} टोकरी में जोड़ दिया गया`);
+      updateAdvancedUI();
+    };
+  }
+
+  // Status badge: updates automatically according to the canteen timings.
+  function updateCanteenStatus(){
+    const badge = document.getElementById("canteenStatus");
+    if(!badge) return;
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours() + now.getMinutes()/60;
+    const open = day >= 1 && day <= 6 && hour >= 9 && hour < 17;
+    badge.innerHTML = open
+      ? '<span class="dot"></span><span>अभी खुली है • 09:00–17:00</span>'
+      : '<span class="dot" style="background:#f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.10)"></span><span>अभी बंद है • समय 09:00–17:00</span>';
+  }
+  updateCanteenStatus();
+  setInterval(updateCanteenStatus, 60000);
+
+  // Refresh sticky cart after any cart action.
+  const oldRenderCart = window.renderटोकरी;
+  if(typeof oldRenderCart === "function"){
+    window.renderटोकरी = function(){
+      oldRenderCart();
+      updateAdvancedUI();
+    };
+  }
+
+</script>
+
+</body>
+</html>
